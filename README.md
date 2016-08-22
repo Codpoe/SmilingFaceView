@@ -9,22 +9,26 @@ A custom view imitating the refresh view in Alipay App
 
 - 支付宝的原始效果
 
- ![Alipay](https://github.com/codpoe/smilingfaceview/tree/master/img/alipay.gif)
+ ![Alipay](http://7xttuv.com2.z0.glb.qiniucdn.com/alipay.gif)
 - 我模仿实现的效果
 
- ![SmilingFaceView](https://github.com/codpoe/smilingfaceview/tree/master/img/smiling-face-view.gif)
+ ![SmilingFaceView](http://7xttuv.com2.z0.glb.qiniucdn.com/smiling-face.gif)
 
  看着效果还是不错的，可用作 Refresh 和 Loading 的 View。最近在学自定义 View，不足的地方很多，见谅。
 
 ## 使用
 
 - start()
+
  开始刷新
 - stop()
+
  停止刷新
 - setColor(int color)
+
  设置颜色
 - setDuration(int duration)
+
  设置动画时长
 
 ## 推荐
