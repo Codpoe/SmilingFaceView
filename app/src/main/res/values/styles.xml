@@ -1,0 +1,16 @@
+<resources>
+    xmlns:tools="http://schemas.android.com/tools"
+    <style name="AppTheme" parent="Base.AppTheme" />
+    <style name="AppTheme.Transparent" parent="Base.AppTheme">
+        <item name="android:statusBarColor">@android:color/transparent</item>
+    </style>
+
+    <!-- Base application theme. -->
+    <style name="Base.AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+</resources>
