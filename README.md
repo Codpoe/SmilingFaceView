@@ -1,5 +1,6 @@
 # SmilingFaceView
 A custom view imitating the refresh view in Alipay App
+ [Demo](http://fir.im/smilingface)
 
 前不久支付宝 App 大更新，里面的「生活」Tab 有一个下拉刷新的 View，不了解的可以去支付宝 App 里面看看。我这里模仿的只是它刷新时候的 View，而不是整个下拉刷新的控件。
 
