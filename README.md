@@ -9,10 +9,10 @@ A custom view imitating the refresh view in Alipay App
 
 - 支付宝的原始效果
 
- ![Alipay](https://github.com/codpoe/smilingfaceview/blob/master/img/alipay.gif)
+ ![Alipay](http://image.codpoe.me/alipay.gif-blogsize)
 - 我模仿实现的效果
 
- ![SmilingFaceView](https://github.com/codpoe/smilingfaceview/blob/master/img/smiling-face-view.gif)
+ ![SmilingFaceView](http://image.codpoe.me/smiling-face-view.gif-blogsize)
 
  看着效果还是不错的，可用作 Refresh 和 Loading 的 View。最近在学自定义 View，不足的地方很多，见谅。
 
