@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">SmilingFace</string>
+    <string name="smiling_alpha">透明度: %1$d</string>
+    <string name="smiling_duration">动画时长: %1$d</string>
 </resources>

@@ -23,7 +23,9 @@ import me.codpoe.smilingface.R;
 public class SmilingFaceView extends View {
 
     private Paint mPaint; // 画笔
-    private int mColor;
+    private int mColor; // 画笔颜色
+    private int mAlpha; // 画笔透明度
+    private int mPaintWidth; // 画笔宽度
 
     private int mWidth = 60; // 默认宽度
     private int mHeight = 60; // 默认高度
@@ -160,7 +162,10 @@ public class SmilingFaceView extends View {
         if (attrs != null) {
             TypedArray array = getContext().obtainStyledAttributes(attrs, R.styleable.SmilingFaceView);
             mColor = array.getColor(R.styleable.SmilingFaceView_smiling_color, getResources().getColor(R.color.colorPrimary));
+            mAlpha = array.getInt(R.styleable.SmilingFaceView_smiling_alpha, 255);
+            mPaintWidth = array.getInt(R.styleable.SmilingFaceView_smiling_width, 10);
             mDuration = array.getInt(R.styleable.SmilingFaceView_smiling_duration, mDuration);
+            array.recycle();
         }
     }
 
@@ -170,8 +175,9 @@ public class SmilingFaceView extends View {
     private void initPaint() {
         mPaint = new Paint();
         mPaint.setColor(mColor);
+        mPaint.setAlpha(mAlpha);
         mPaint.setStyle(Paint.Style.STROKE);
-        mPaint.setStrokeWidth(10);
+        mPaint.setStrokeWidth(mPaintWidth);
         mPaint.setStrokeCap(Paint.Cap.ROUND);
         mPaint.setAntiAlias(true);
 
@@ -372,7 +378,36 @@ public class SmilingFaceView extends View {
     }
 
     /**
-     * 动态设置动画时长
+     * 设置画笔颜色和透明度
+     * @param color
+     */
+    public void setColorAndAlpha(int color, int alpha) {
+        mColor = color;
+        mAlpha = alpha;
+        mPaint.setColor(mColor);
+        mPaint.setAlpha(mAlpha);
+    }
+
+    /**
+     * 设置画笔透明度
+     * @param alpha
+     */
+    public void setAlpha(int alpha) {
+        mAlpha = alpha;
+        mPaint.setAlpha(mAlpha);
+    }
+
+    /**
+     * 设置画笔宽度
+     * @param paintWidth
+     */
+    public void setPaintWidth(int paintWidth) {
+        mPaintWidth = paintWidth;
+        mPaint.setStrokeWidth(mPaintWidth);
+    }
+
+    /**
+     * 设置动画时长
      * @param duration
      */
     public void setDuration(int duration) {
@@ -382,13 +417,5 @@ public class SmilingFaceView extends View {
         mOkAnim.setDuration(mDuration / 5);
     }
 
-    /**
-     * 动态设置画笔颜色
-     * @param color
-     */
-    public void setColor(int color) {
-        mColor = color;
-        mPaint.setColor(mColor);
-    }
 
 }

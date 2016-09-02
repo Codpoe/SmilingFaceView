@@ -30,6 +30,8 @@
         android:layout_marginTop="50dp"
         android:layout_gravity="center"
         app:smiling_color="@color/colorPrimary"
+        app:smiling_alpha="127"
+        app:smiling_width="10"
         app:smiling_duration="1500"/>
 
     <Button
@@ -48,7 +50,7 @@
         android:text="Stop"/>
 
     <Spinner
-        android:id="@+id/smiling_color_spinner"
+        android:id="@+id/smiling_color_alpha_spinner"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -57,17 +59,31 @@
         android:entries="@array/colors"/>
 
     <TextView
-        android:id="@+id/duration_tv"
+        android:id="@+id/smiling_alpha_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="10dp"
-        android:textSize="25sp"
-        android:textColor="@color/colorAccent"
-        android:text="1500"/>
+        android:text="透明度: 127"/>
 
     <SeekBar
-        android:id="@+id/smiling_set_duration_seekbar"
+        android:id="@+id/smiling_alpha_seekbar"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:max="255"
+        android:progress="127"/>
+
+    <TextView
+        android:id="@+id/smiling_duration_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:text="动画时长: 1500"/>
+
+    <SeekBar
+        android:id="@+id/smiling_duration_seekbar"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"

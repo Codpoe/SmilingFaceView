@@ -27,11 +27,15 @@ public class MainActivity extends AppCompatActivity {
     Button mSmilingStartBtn;
     @BindView(R.id.smiling_stop_btn)
     Button mSmilingStopBtn;
-    @BindView(R.id.smiling_color_spinner)
-    Spinner mColorSpinner;
-    @BindView(R.id.duration_tv)
+    @BindView(R.id.smiling_color_alpha_spinner)
+    Spinner mColorAlphaSpinner;
+    @BindView(R.id.smiling_alpha_tv)
+    TextView mAlphaTv;
+    @BindView(R.id.smiling_alpha_seekbar)
+    SeekBar mAlphaSeekbar;
+    @BindView(R.id.smiling_duration_tv)
     TextView mDurationTv;
-    @BindView(R.id.smiling_set_duration_seekbar)
+    @BindView(R.id.smiling_duration_seekbar)
     SeekBar mDurationSeekBar;
 
     @Override
@@ -40,27 +44,27 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
-        mColorSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        mColorAlphaSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 switch (position) {
                     case 0:
-                        mSmilingFaceView.setColor(getResources().getColor(R.color.colorPrimary));
+                        mSmilingFaceView.setColorAndAlpha(getResources().getColor(R.color.colorPrimary), 127);
                         break;
                     case 1:
-                        mSmilingFaceView.setColor(getResources().getColor(R.color.colorPrimaryDark));
+                        mSmilingFaceView.setColorAndAlpha(getResources().getColor(R.color.colorPrimaryDark), 127);
                         break;
                     case 2:
-                        mSmilingFaceView.setColor(getResources().getColor(R.color.colorAccent));
+                        mSmilingFaceView.setColorAndAlpha(getResources().getColor(R.color.colorAccent), 127);
                         break;
                     case 3:
-                        mSmilingFaceView.setColor(Color.RED);
+                        mSmilingFaceView.setColorAndAlpha(Color.RED, 127);
                         break;
                     case 4:
-                        mSmilingFaceView.setColor(Color.GREEN);
+                        mSmilingFaceView.setColorAndAlpha(Color.GREEN, 127);
                         break;
                     case 5:
-                        mSmilingFaceView.setColor(Color.BLUE);
+                        mSmilingFaceView.setColorAndAlpha(Color.BLUE, 127);
                         break;
                 }
             }
@@ -70,10 +74,28 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        mAlphaSeekbar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                mAlphaTv.setText(String.format(getString(R.string.smiling_alpha), progress));
+                mSmilingFaceView.setAlpha(progress);
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
+
         mDurationSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                mDurationTv.setText((String.valueOf(progress)));
+                mDurationTv.setText(String.format(getString(R.string.smiling_duration), progress));
                 mSmilingFaceView.setDuration(progress);
             }
 
