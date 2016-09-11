@@ -27,8 +27,8 @@ public class MainActivity extends AppCompatActivity {
     Button mSmilingStartBtn;
     @BindView(R.id.smiling_stop_btn)
     Button mSmilingStopBtn;
-    @BindView(R.id.smiling_color_alpha_spinner)
-    Spinner mColorAlphaSpinner;
+    @BindView(R.id.smiling_color_spinner)
+    Spinner mColorSpinner;
     @BindView(R.id.smiling_alpha_tv)
     TextView mAlphaTv;
     @BindView(R.id.smiling_alpha_seekbar)
@@ -44,27 +44,27 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
-        mColorAlphaSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        mColorSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 switch (position) {
                     case 0:
-                        mSmilingFaceView.setColorAndAlpha(getResources().getColor(R.color.colorPrimary), 127);
+                        mSmilingFaceView.setColor(getResources().getColor(R.color.colorPrimary), 127);
                         break;
                     case 1:
-                        mSmilingFaceView.setColorAndAlpha(getResources().getColor(R.color.colorPrimaryDark), 127);
+                        mSmilingFaceView.setColor(getResources().getColor(R.color.colorPrimaryDark), 127);
                         break;
                     case 2:
-                        mSmilingFaceView.setColorAndAlpha(getResources().getColor(R.color.colorAccent), 127);
+                        mSmilingFaceView.setColor(getResources().getColor(R.color.colorAccent), 127);
                         break;
                     case 3:
-                        mSmilingFaceView.setColorAndAlpha(Color.RED, 127);
+                        mSmilingFaceView.setColor(Color.RED, 127);
                         break;
                     case 4:
-                        mSmilingFaceView.setColorAndAlpha(Color.GREEN, 127);
+                        mSmilingFaceView.setColor(Color.GREEN, 127);
                         break;
                     case 5:
-                        mSmilingFaceView.setColorAndAlpha(Color.BLUE, 127);
+                        mSmilingFaceView.setColor(Color.BLUE, 127);
                         break;
                 }
             }

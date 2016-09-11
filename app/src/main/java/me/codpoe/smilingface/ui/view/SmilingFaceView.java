@@ -381,11 +381,9 @@ public class SmilingFaceView extends View {
      * 设置画笔颜色和透明度
      * @param color
      */
-    public void setColorAndAlpha(int color, int alpha) {
+    public void setColor(int color, int alpha) {
         mColor = color;
-        mAlpha = alpha;
         mPaint.setColor(mColor);
-        mPaint.setAlpha(mAlpha);
     }
 
     /**
